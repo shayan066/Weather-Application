@@ -1,4 +1,4 @@
-# Weather Dashborad Application
+# Weather Dashboard Application
 
 ## Table of Contents
 
