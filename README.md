@@ -32,9 +32,9 @@ This is a Weather Dashboard application designed to provide users with up-to-dat
 
 ### Features
 
-- default city is Cairo, EG, providing weather information for this location.
-- Real-time weather data based on the user's current geographical location if you click on Current Location button.
-- search for any city and instantly view its weather conditions.
+- Default city is Cairo, EG, providing weather information for this location.
+- Real-time weather data based on the user's current geographical location if you click on Current Location Button.
+- Search for any city and instantly view its weather conditions.
 - Get Today's Highlights, including the Sunrise & Sunset times, Humidity, Pressure, Visibility, and "Feels Like" temperature.
 - Daily Weather Forecast, including updates every 3 hours and the corresponding Wind Speed.
 - Access a 5-day Weather Forecast.
@@ -75,7 +75,6 @@ These metrics reflect a well-optimized and compliant website.
 - `.env.local` : Local environment variables (sensitive, not committed to version control)
 - `vercel.json` : Vercel configuration file
 - `package.json` : Project configuration and dependencies
-- `vite.config.js` : Vite configuration file
 
 ## API Integration
 
@@ -114,7 +113,7 @@ directory, and replace your-api-key-here with your OpenWeatherMap API key.
 ## License
 
 This project is open-source and free for non-commercial use. You are allowed to view, modify, and distribute the code for non-commercial purposes. For commercial use or any other inquiries, please contact me.
-No specific license file is provided. If you have questions about using this project, feel free to reach out to me at guptaanjali90757@gmail.com
+No specific license file is provided. If you have questions about using this project, feel free to reach out to me at shayanansari598@gmail.com
 
 ## Author
 
