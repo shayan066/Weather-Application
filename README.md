@@ -1,70 +1,121 @@
-# Getting Started with Create React App
+# Weather Dashborad Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
 
-## Available Scripts
+- [Overview](#overview)
+- [Built with](#built-with)
+- [Links](#links)
+- [Features](#features)
+- [Lighthouse Report](#Lighthouse-Report)
+- [Project Structure](#project-structure)
+- [API Integration](#api-integration)
+- [Installation](#installation)
+- [License](#license)
+- [Author](#author)
 
-In the project directory, you can run:
+### Overview
 
-### `npm start`
+This is a Weather Dashboard application designed to provide users with up-to-date and comprehensive weather information. With its user-friendly interface and intuitive design, the dashboard offers a range of features to help users stay informed about current conditions and forecasts.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Built with
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- ReactJs
+- CSS Modules
+- RESTful API
+- Context API
+- ESLint and Prettier for code linting and formatting
+- Designed by me
 
-### `npm test`
+### Links
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Live Site URL : 
 
-### `npm run build`
+### Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- default city is Cairo, EG, providing weather information for this location.
+- Real-time weather data based on the user's current geographical location if you click on Current Location button.
+- search for any city and instantly view its weather conditions.
+- Get Today's Highlights, including the Sunrise & Sunset times, Humidity, Pressure, Visibility, and "Feels Like" temperature.
+- Daily Weather Forecast, including updates every 3 hours and the corresponding Wind Speed.
+- Access a 5-day Weather Forecast.
+- Light and Dark Modes, represented by a sun or moon icon. Your chosen mode is saved using local storage.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Lighthouse Report Metrics
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Desktop Metrics:**
 
-### `npm run eject`
+  - Performance: Outstanding at 99%
+  - Accessibility: High score of 95%
+  - Best Practices: High score of 93%
+  - SEO: Perfect score of 100%
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Mobile Metrics:**
+  - Performance: Solid at around 90%
+  - Accessibility: High score of 94%
+  - Best Practices: High score of 93%
+  - SEO: Impressive score of 97%
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The Lighthouse report provides valuable metrics for both desktop and mobile, showcasing outstanding performance, accessibility, best practices, and SEO optimization.
+These metrics reflect a well-optimized and compliant website.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Project Structure
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- `src/` : Source code directory
+  - `assets/` : Image files, stylesheets, or other static assets
+  - `components/` : React components
+    - `ComponentName.jsx` : component
+    - `ComponentName.module.css` : Stylesheet for the component using CSS modules
+  - `context/` : Context providers for the Context API
+  - `Hooks/` : some custom hooks i needed
+  - `App.jsx` : Main application component which is the `<Layout />`
+  - `index.css` : Global stylesheet
+  - `main.js` : Entry point of the application
+- `public/` : Public assets and `index.html`
+- `.eslintrc.cjs` : ESLint configuration file
+- `.env.local` : Local environment variables (sensitive, not committed to version control)
+- `vercel.json` : Vercel configuration file
+- `package.json` : Project configuration and dependencies
+- `vite.config.js` : Vite configuration file
 
-## Learn More
+## API Integration
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The Weather Dashboard uses OpenWeatherMap API for fetching weather data.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Fetching Data
 
-### Code Splitting
+```javascript
+const apiKey = "YOUR_API_KEY";
+const city = "YourCity";
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+fetch(
+  `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`,
+)
+  .then((response) => response.json())
+  .then((data) => displayWeather(data))
+  .catch((error) => console.error("Error:", error));
+```
 
-### Analyzing the Bundle Size
+## Installation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+To set up and run the Weather Dashboard locally with an API key, follow these steps:
 
-### Making a Progressive Web App
+```bash
+git clone https://github.com/AbdelrahmanAlsayed/Weather-Application
+cd your-project-directory
+echo "REACT_APP_OPENWEATHERMAP_API_KEY=your-api-key-here" > .env
+npm install && npm run dev
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+Replace your-project-directory with the actual name of your project
+directory, and replace your-api-key-here with your OpenWeatherMap API key.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```
 
-### Deployment
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+This project is open-source and free for non-commercial use. You are allowed to view, modify, and distribute the code for non-commercial purposes. For commercial use or any other inquiries, please contact me.
+No specific license file is provided. If you have questions about using this project, feel free to reach out to me at guptaanjali90757@gmail.com
 
-### `npm run build` fails to minify
+## Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- <a href="https://www.linkedin.com/in/shayan-azeem-0798931bb" target="_blank">LinkedIn</a>
